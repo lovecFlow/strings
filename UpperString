@@ -1,0 +1,14 @@
+package main
+
+import (
+  "strings"
+)
+
+func main() {
+}
+
+type MyString string
+
+func (s MyString) IsUpperCase() bool {
+  return s == MyString(strings.ToUpper(string(s))) //Легкая проверка 
+}
