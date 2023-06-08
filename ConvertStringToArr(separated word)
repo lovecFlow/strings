@@ -1,0 +1,32 @@
+//Простой вариант 
+package main 
+
+import "strings"
+
+func StringToArray(str string) []string {
+      // your code here
+	  return strings.Split(str, " ")
+}
+
+//Сложный вариант 
+
+func StringToArray(s string) []string {
+	temp := 0
+	slice := []string{}
+	sep := []int{}
+	for i, m := range s {
+		if m == ' ' {
+			sep = append(sep, i)
+		}
+	}
+	for i := 0; i < len(sep); i++ {
+		if !(s[temp:sep[i]] == " " || s[temp:sep[i]] == "") {
+			slice = append(slice, s[temp:sep[i]])
+		}
+		temp = sep[i] + 1
+	}
+	if s[temp:] != "" {
+		slice = append(slice, s[temp:])
+	}
+	return slice
+}
