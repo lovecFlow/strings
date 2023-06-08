@@ -1,0 +1,20 @@
+package main 
+
+//Конвертация регистров символов в строке 
+
+import (
+  "strings"
+  "unicode"
+)
+
+func ToAlternatingCase(str string) string {
+  alternate := func(r rune) rune {
+    if unicode.IsLower(r) {
+      return unicode.ToUpper(r)
+    } else {
+      return unicode.ToLower(r)
+    }
+  }
+  
+  return strings.Map(alternate, str)
+}
