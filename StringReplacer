@@ -5,3 +5,17 @@ func FakeBin(x string) string { //Получаем строку
   }
   return string(b)
 }
+
+
+//ВТОРОЙ ВАРИАНТ (Условное выражение) 
+
+func FakeBin(x string) (result string) {
+    for _, char := range x { //Проходимся по ренджу 
+        if char < '5' { //Сравниваем char с подстрокой 
+            result += "0" //Складываем в result 0, если char меньше 5  
+        } else { //ещё 
+            result += "1" //ещё больше, то складываем в result 1. 
+        }
+    }
+    return
+}
