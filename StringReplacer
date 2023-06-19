@@ -19,3 +19,18 @@ func FakeBin(x string) (result string) {
     }
     return
 }
+
+
+//РЕПЛЕЙСЕР ПРОБЕЛОВ (switch) 
+func ModifySpaces(s, mode string) string {
+	var rep string
+	switch mode {
+	case "dash":
+		rep = "-"
+	case "underscore":
+		rep = "_"
+	default: 
+		rep = "*"
+	}
+	return strings.ReplaceAll(s, " ", rep)
+}
